@@ -1,0 +1,16 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Env / secrets
+.env
+*.local
+
+# Logs (сырые данные не коммитим)
+logs/*.jsonl
+logs/*.log
+
+# IDE
+.vscode/settings.json
