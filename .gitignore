@@ -14,3 +14,4 @@ logs/*.log
 
 # IDE
 .vscode/settings.json
+reports/output/*.html
