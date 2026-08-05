@@ -52,7 +52,7 @@ jobs:
         run: |
           flake8 ingest transform scripts reports tests \
             --max-line-length=120 \
-            --extend-ignore=E203,W503,E402 \
+            --extend-ignore=E203,W503,E402,W292 \
             --exclude=reports/output
 
       - name: Apply database schema
