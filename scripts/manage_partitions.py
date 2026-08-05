@@ -157,8 +157,14 @@ def backfill(conn) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("--backfill", action="store_true", help="Move existing default-partition data into dated partitions")
-    group.add_argument("--create-future", type=int, metavar="N", help="Create N days of future partitions starting today")
+    group.add_argument(
+        "--backfill", action="store_true",
+        help="Move existing default-partition data into dated partitions",
+    )
+    group.add_argument(
+        "--create-future", type=int, metavar="N",
+        help="Create N days of future partitions starting today",
+    )
     args = parser.parse_args()
 
     conn = psycopg2.connect(**DB_CONFIG)

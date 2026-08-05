@@ -76,7 +76,10 @@ def test_invalid_field_raises_validation_error(field, bad_value):
         RawRequestRecord.model_validate(data)
 
 
-@pytest.mark.parametrize("missing_field", ["timestamp", "request_id", "client_ip", "method", "path", "status_code", "latency_ms"])
+@pytest.mark.parametrize(
+    "missing_field",
+    ["timestamp", "request_id", "client_ip", "method", "path", "status_code", "latency_ms"],
+)
 def test_missing_required_field_raises_validation_error(missing_field):
     data = {k: v for k, v in VALID_RECORD.items() if k != missing_field}
     with pytest.raises(ValidationError):
